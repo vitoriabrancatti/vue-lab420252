@@ -18,7 +18,9 @@ const store = usuarioStore()
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/usuario">Usuários</RouterLink>
         <RouterLink to="/anotacao">Gerenciar Anotações</RouterLink>
+        <RouterLink to='/reacao'>Reaja a um Post!</RouterLink>
         <RouterLink v-if="!store.token" to="/login">Login</RouterLink>
+
       </nav>
     </div>
   </header>

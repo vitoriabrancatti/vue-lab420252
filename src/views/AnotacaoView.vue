@@ -71,12 +71,12 @@ interface usuario {
 interface anotacao {
   id?: number
   texto: string
-  dataHora: Date
+  dataHora: string
   usuario: usuario
 }
 
-const novaAnotacao = ref<anotacao>({ texto: '', dataHora: new Date(), usuario: { id: 1 } })
-const pesquisa = ref<anotacao>({ texto: '', dataHora: new Date(), usuario: { id: 1 } })
+const novaAnotacao = ref<anotacao>({ texto: '', dataHora: "", usuario: { id: 1 } })
+const pesquisa = ref<anotacao>({ texto: '', dataHora: "", usuario: { id: 1 } })
 
 const anotacoes = ref<anotacao[]>()
 
@@ -100,7 +100,7 @@ async function cadastrar() {
     await axios.post('anotacao', novaAnotacao.value)
     atualizar()
     novaAnotacao.value.texto = ''
-    novaAnotacao.value.dataHora = new Date()
+    novaAnotacao.value.dataHora = ''
     novaAnotacao.value.usuario.id = 1
     erro.value = undefined
   } catch (e) {
